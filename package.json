@@ -13,7 +13,11 @@
     "contributes": {
         "jsonValidation": [
             {
-                "fileMatch": "(package|esy).json",
+                "fileMatch": "esy.json",
+                "url": "./schemas/esy.schema.json"
+            },
+            {
+                "fileMatch": "package.json",
                 "url": "./schemas/esy.schema.json"
             }
         ]
