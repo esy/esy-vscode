@@ -14,11 +14,11 @@
         "jsonValidation": [
             {
                 "fileMatch": "esy.json",
-                "url": "./schemas/esy.schema.json"
+                "url": "./schemas/esySchema.json"
             },
             {
                 "fileMatch": "package.json",
-                "url": "./schemas/esy.schema.json"
+                "url": "./schemas/esySchema.json"
             }
         ]
     },
