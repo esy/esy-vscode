@@ -1,20 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "JSON schema for ESY or NPM package.json files",
-  "allOf": [{
-    "$ref": "http://json.schemastore.org/package#"
-  }],
   "definitions": {
-    "detectEsy": {
-      "required": ["esy"]
-    },
-    "detectOverride": {
-      "anyOf": [{
-        "required": ["override"]
-      }, {
-        "required": ["source"]
-      }]
-    },
     "cmdsDef": {
       "type": "array",
       "items": {
@@ -80,7 +67,6 @@
       }
     },
     "esyDef": {
-      "required": ["esy"],
       "properties": {
         "esy": {
           "allOf": [{
@@ -122,8 +108,6 @@
       }
     },
     "overrideDef": {
-      "required": ["source", "override"],
-      "$comment": "If we give a source, then we have to give an override and vice-versa",
       "properties": {
         "source": {
           "type": "string",
@@ -174,23 +158,11 @@
       }
     }
   },
-  "$comment": "If an esy property or source/override is detected, then only one of them can apply. (i.e. cannot have both esy and source/override.",
-  "if": {
-    "anyOf": [{
-        "$ref": "#/definitions/detectEsy"
-      },
-      {
-        "$ref": "#/definitions/detectOverride"
-      }
-    ]
-  },
-  "then": {
-    "oneOf": [{
-        "$ref": "#/definitions/esyDef"
-      },
-      {
-        "$ref": "#/definitions/overrideDef"
-      }
-    ]
-  }
+  "allOf": [{
+    "$ref": "http://json.schemastore.org/package#"
+  }, {
+    "$ref": "#/definitions/esyDef"
+  }, {
+    "$ref": "#/definitions/overrideDef"
+  }],
 }
