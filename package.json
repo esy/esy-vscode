@@ -4,6 +4,11 @@
     "description": "Esy Projects support for VSCode",
     "version": "0.0.1",
     "publisher": "giltho",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/giltho/esy-vscode"
+    },
+    "license": "MIT",
     "engines": {
         "vscode": "^1.0.0"
     },
