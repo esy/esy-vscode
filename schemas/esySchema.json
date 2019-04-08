@@ -94,6 +94,7 @@
           ],
           "properties": {
             "release": {
+              "description": "Additional information needed for esy-release, including the binaries that should be added to the PATH",
               "type": "object",
               "required": ["bin"],
               "properties": {
