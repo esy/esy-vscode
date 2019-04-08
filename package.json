@@ -27,13 +27,21 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "test": "mocha --ui tdd --require @babel/register schemas/test"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "tslint": "^5.8.0",
+        "@babel/core": "^7.4.3",
+        "@babel/polyfill": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/register": "^7.4.0",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "@types/request-promise": "^4.1.42",
+        "jsonschema": "^1.2.4",
+        "request-promise": "^4.2.4",
+        "should": "^13.2.3",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
     }
 }

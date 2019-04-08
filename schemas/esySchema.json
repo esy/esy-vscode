@@ -3,11 +3,27 @@
   "title": "JSON schema for ESY or NPM package.json files",
   "definitions": {
     "cmdsDef": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1
+      "oneOf": [{
+          "type": "array",
+          "items": {
+            "oneOf": [{
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
     "sandboxConfig": {
       "type": "object",
@@ -83,10 +99,16 @@
               "properties": {
                 "bin": {
                   "description": "List of all executable names which must be made available on $PATH when release is installed on user machine",
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "oneOf": [{
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
                 },
                 "includePackages": {
                   "type": "array",
@@ -164,5 +186,5 @@
     "$ref": "#/definitions/esyDef"
   }, {
     "$ref": "#/definitions/overrideDef"
-  }],
+  }]
 }

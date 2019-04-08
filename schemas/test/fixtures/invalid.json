@@ -6,15 +6,8 @@
     }
   },
   {
-    "name": "build-not-array",
-    "version": "0.0.0",
-    "esy": {
-      "build": "dune build -p #{self.name}"
-    }
-  },
-  {
     "name": "exportedenv-no-scope",
-    "version": "0.0.0",
+    "version": "2000",
     "override": {
       "exportedEnv": {
         "SOME_VAR": {
