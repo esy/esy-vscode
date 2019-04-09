@@ -4,4 +4,5 @@
 	"recommendations": [
 		"ms-vscode.vscode-typescript-tslint-plugin",
 		"HookyQR.beautify"
+	]
 }
