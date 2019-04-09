@@ -3,6 +3,7 @@
 ## Unreleased
 ### Added
   - Icon for the extension
+  - keywords for marketplace
 
 ## 0.0.1
 ### Added

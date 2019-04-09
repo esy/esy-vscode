@@ -4,6 +4,7 @@
     "description": "Esy Projects support for VSCode",
     "version": "0.0.1",
     "publisher": "esy",
+    "keywords": ["esy", "ocaml", "reason"],
     "repository": {
         "type": "git",
         "url": "https://github.com/esy/esy-vscode"
