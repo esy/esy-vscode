@@ -16,7 +16,7 @@
     "categories": [
         "Other"
     ],
-    "icon": "./icon.png",
+    "icon": "icon.png",
     "contributes": {
         "jsonValidation": [
             {
