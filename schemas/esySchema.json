@@ -96,21 +96,44 @@
             "release": {
               "description": "Additional information needed for esy-release, including the binaries that should be added to the PATH",
               "type": "object",
-              "required": ["bin"],
-              "properties": {
-                "bin": {
-                  "description": "List of all executable names which must be made available on $PATH when release is installed on user machine",
-                  "oneOf": [{
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
+              "anyOf": [{
+                  "required": ["bin"],
+                  "properties": {
+                    "bin": {
+                      "description": "List of all executable names which must be made available on $PATH when release is installed on user machine",
+                      "oneOf": [{
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
                     }
-                  ]
+                  }
                 },
+                {
+                  "required": ["releasedBinaries"],
+                  "properties": {
+                    "releasedBinaries": {
+                      "description": "[DEPRECATED] Use `bin` instead !",
+                      "oneOf": [{
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "properties": {
                 "includePackages": {
                   "type": "array",
                   "items": {
