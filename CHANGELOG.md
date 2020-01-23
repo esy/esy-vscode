@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.3
+  - Moves schema out, downloads it from github directly.
+
 ## 0.0.2
 ### Fix
   - pesy uses releasedBinaries instead of bins, allow that, but with a deprecated description
