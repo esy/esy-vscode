@@ -2,7 +2,7 @@
     "name": "esy-vscode",
     "displayName": "Esy",
     "description": "Esy Projects support for VSCode",
-    "version": "0.0.3",
+    "version": "0.0.2",
     "publisher": "esy",
     "keywords": [
         "esy",
